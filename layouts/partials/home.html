@@ -25,32 +25,10 @@
       this.interval = setInterval(() => {
         console.log("reloading...");
         this.setState({catid: Math.floor(Math.random() * 100)});
-        // fetch("http://thecatapi.com/api/images/get?format=xml&type=gif&size=small",
-        //       {mode: 'no-cors'})
-        // .then(
-        //   (result) => {
-        //     console.log('........')
-        //     console.log(result);
-        //     let responseDoc = new DOMParser().parseFromString(result.body, 'application/xml');
-        //     // let caturl = responseDoc.getElementsByTagName(
-        //     this.setState({
-        //       catUrl: result.headers.location
-        //     });
-        //   }, (error) => {console.log(error)});
         this.forceUpdate();
       }, 10000);
     }
-    // componentDidMount() {
-    //   fetch("http://thecatapi.com/api/images/get?format=src&type=gif&size=small",
-    //         {mode: 'no-cors'})
-    //   .then(
-    //     (result) => {
-    //       console.log(result);
-    //       this.setState({
-    //         catUrl: result
-    //       });
-    //     }, (error) => {console.log(error)});
-    // }
+  
     render() {
       var caturl = "http://thecatapi.com/api/images/get?format=src&type=gif&size=small&foo=" + this.state.catid;
       return (
